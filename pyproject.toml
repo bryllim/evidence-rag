@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evidence-rag"
+version = "0.1.0"
+description = "Offline evaluation primitives for evidence-grounded RAG systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Bryl Lim" }]
+keywords = ["rag", "evaluation", "retrieval", "citations", "llmops"]
+
+[project.scripts]
+evidence-rag-demo = "evidence_rag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
