@@ -38,7 +38,7 @@ class SearchHit:
     score: float
 
 
-def chunk_document(document: Document, chunk_size: int = 120, overlap: int = 20) -> tuple[Chunk, ...]:
+def chunk_document(document: Document, chunk_size: int = 120, overlap: int = 0) -> tuple[Chunk, ...]:
     if chunk_size < 1 or overlap < 0 or overlap >= chunk_size:
         raise ValueError("require chunk_size > overlap >= 0")
     words = document.text.split()
